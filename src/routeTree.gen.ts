@@ -10,33 +10,103 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ManagerRouteImport } from './routes/manager'
+import { Route as NewRouteImport } from './routes/new'
+import { Route as QueueRouteImport } from './routes/queue'
+import { Route as TicketsIdRouteImport } from './routes/tickets.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManagerRoute = ManagerRouteImport.update({
+  id: '/manager',
+  path: '/manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewRoute = NewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QueueRoute = QueueRouteImport.update({
+  id: '/queue',
+  path: '/queue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TicketsIdRoute = TicketsIdRouteImport.update({
+  id: '/tickets/$id',
+  path: '/tickets/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/login': typeof LoginRoute
+  '/manager': typeof ManagerRoute
+  '/new': typeof NewRoute
+  '/queue': typeof QueueRoute
+  '/tickets/$id': typeof TicketsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/login': typeof LoginRoute
+  '/manager': typeof ManagerRoute
+  '/new': typeof NewRoute
+  '/queue': typeof QueueRoute
+  '/tickets/$id': typeof TicketsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/login': typeof LoginRoute
+  '/manager': typeof ManagerRoute
+  '/new': typeof NewRoute
+  '/queue': typeof QueueRoute
+  '/tickets/$id': typeof TicketsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/admin' | '/login' | '/manager' | '/new' | '/queue' | '/tickets/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    '/' | '/admin' | '/login' | '/manager' | '/new' | '/queue' | '/tickets/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/login'
+    | '/manager'
+    | '/new'
+    | '/queue'
+    | '/tickets/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  LoginRoute: typeof LoginRoute
+  ManagerRoute: typeof ManagerRoute
+  NewRoute: typeof NewRoute
+  QueueRoute: typeof QueueRoute
+  TicketsIdRoute: typeof TicketsIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +118,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manager': {
+      id: '/manager'
+      path: '/manager'
+      fullPath: '/manager'
+      preLoaderRoute: typeof ManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new': {
+      id: '/new'
+      path: '/new'
+      fullPath: '/new'
+      preLoaderRoute: typeof NewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/queue': {
+      id: '/queue'
+      path: '/queue'
+      fullPath: '/queue'
+      preLoaderRoute: typeof QueueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tickets/$id': {
+      id: '/tickets/$id'
+      path: '/tickets/$id'
+      fullPath: '/tickets/$id'
+      preLoaderRoute: typeof TicketsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  LoginRoute: LoginRoute,
+  ManagerRoute: ManagerRoute,
+  NewRoute: NewRoute,
+  QueueRoute: QueueRoute,
+  TicketsIdRoute: TicketsIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
