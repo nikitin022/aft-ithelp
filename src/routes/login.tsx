@@ -40,7 +40,7 @@ function Login() {
         <p className="text-xs text-white/40">АФТ · внутренний service desk · прототип</p>
       </div>
 
-      <div className="flex items-center justify-center px-6 py-12">
+      <div className="flex items-center justify-center aft-pattern-light px-6 py-12">
         <div className="w-full max-w-sm">
           <div className="mb-2 h-1 w-14 aft-rule" />
           <h2 className="text-2xl font-bold">Вход по корпоративной учётной записи</h2>

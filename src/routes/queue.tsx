@@ -100,9 +100,9 @@ function Queue() {
           </Link>
         ))}
         {list.length === 0 && (
-          <div className="rounded-md border bg-deep aft-pattern p-10 text-center">
-            <p className="text-lg font-bold text-white">Заявок по этому фильтру нет</p>
-            <p className="mt-1 text-sm text-white/60">Очередь пуста — все сроки под контролем.</p>
+          <div className="rounded-md border aft-pattern-light p-10 text-center">
+            <p className="text-lg font-bold text-deep">Заявок по этому фильтру нет</p>
+            <p className="mt-1 text-sm text-muted-foreground">Очередь пуста — все сроки под контролем.</p>
           </div>
         )}
       </div>
