@@ -42,7 +42,7 @@ function Login() {
 
       <div className="flex items-center justify-center aft-pattern-light px-6 py-12">
         <div className="w-full max-w-sm">
-          <div className="mb-2 h-1 w-14 aft-rule" />
+          <div className="mb-2.5 h-1.5 w-24 aft-rule" />
           <h2 className="text-2xl font-bold">Вход по корпоративной учётной записи</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             В прототипе выберите роль — экраны откроются от её имени.
