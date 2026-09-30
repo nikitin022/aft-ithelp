@@ -94,7 +94,6 @@ export function PortalShell({
         <div className="border-b bg-card px-4 py-5 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <div className="mb-2.5 h-1.5 w-24 aft-rule" />
               <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>
               {subtitle && <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{subtitle}</p>}
             </div>
